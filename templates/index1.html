@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="static/style/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="static/style/style.css">
+</head>
+<body>
+<style>
+    div.result{
+     text-align: center;
+     font-size: 18pt;
+    }
+</style>
+	<div class="header_section">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="logo"><a href="index.html"><img src="static/images/logo1.png"></a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="layout_padding banner_section">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<h1 class="banner_taital">Credit Repayment Prediction</h1>
+                    <h1 class="banner_taital">Company LendingClub</h1>
+					<p class="browse_text"> </p>
+				</div>
+			</div>
+		</div>
+	</div>
+    <div class="container">
+        <form action = "{{url_for('predict')}}" method ="POST" >
+                <div class="search_box">
+                      <div class="form-group  row">
+                        <div class="col-sm-3">
+                            <label for="age">Credit policy</label>
+                            <p class="form-control" style="color:black">{{credit}}</p>
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="sex">Purpose</label>
+                            <br>
+                            <p class="form-control" style="color:black">{{purpose}}</p>
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="age">Interest rate</label>
+                            <p class="form-control" style="color:black">{{rate}}</p>
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="age">Monthly installment</label>
+                            <p class="form-control" style="color:black">{{installment}}</p>
+                        </div>
+                      </div>
+                      <br>
+                      <div class="form-group  row">
+                          <div class="col-sm-3">
+                            <label for="age">Annual income</label>
+                            <p class="form-control" style="color:black">{{log}}</p>
+                          </div>
+                          <div class="col-sm">
+                            <label for="trestbps">Debt to income ratio</label>
+                            <p class="form-control" style="color:black">{{dti}}</p>
+                          </div>
+                          <div class="col-sm">
+                            <label for="chol">FICO</label>
+                            <p class="form-control" style="color:black">{{fico}}</p>
+                          </div>
+                          <div class="col-sm">
+                            <label for="chol">Days with credit line</label>
+                            <p class="form-control" style="color:black">{{days}}</p>
+                          </div>
+                      </div>
+                      <br>
+                      <div class="form-group row">
+                          <div class="col-sm">
+                            <label for="chol">Revolving balance</label>
+                            <p class="form-control" style="color:black">{{revol}}</p>
+                          </div>
+                          <div class="col-sm">
+                            <label for="chol">Revolving line utilization rate</label>
+                            <p class="form-control" style="color:black">{{revol_}}</p>
+                          </div>
+                          <div class="col-sm">
+                            <label for="chol">Number of inquiries</label>
+                            <p class="form-control" style="color:black">{{inq}}</p>
+                          </div>
+                          <div class="col-sm">
+                            <label for="chol">Number of delays</label>
+                            <p class="form-control" style="color:black">{{delinq}}</p>
+                          </div>
+                          <div class="col-sm">
+                            <label for="chol">Number of derogatory records</label>
+                            <p class="form-control" style="color:black">{{pub}}</p>
+                          </div>
+                      </div>
+                      <br>
+                     <div class="result">
+							<p style="color:blue">{{result}}</p>
+					  </div>
+                </div>
+            </form>
+    </div>
+    <div class="copyright">
+    	<p class="copyright_text">© 2021 LendingClub Company. All Rights Reserved</p>
+    </div>
+</body>
+</html>

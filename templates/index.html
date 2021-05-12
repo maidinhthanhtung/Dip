@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="static/style/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="static/style/style.css">
+</head>
+<body>
+<style>
+    div.result{
+     text-align: center;
+    }
+</style>
+	<div class="header_section">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="logo"><a href="index.html"><img src="static/images/logo1.png"></a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="layout_padding banner_section">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<h1 class="banner_taital">Credit Repayment Prediction</h1>
+                    <h1 class="banner_taital">Company LendingClub</h1>
+					<p class="browse_text"> </p>
+				</div>
+			</div>
+		</div>
+	</div>
+    <div class="container">
+        <form action = "{{url_for('predict')}}" method ="POST" >
+                <div class="search_box">
+                      <div class="form-group  row">
+                        <div class="col-sm-3">
+                            <label for="age">Credit policy</label>
+                            <select class="form-control" id="credit.policy"  name="credit.policy" required>
+                              <option disabled selected value>Select an Option</option>
+                              <option value = "0">0</option>
+                              <option value = "1">1</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="sex">Purpose</label>
+                            <select class="form-control" id="purpose"  name="purpose" required>
+                              <option disabled selected value>Select an Option</option>
+                              <option value = "0">credit_card</option>
+                              <option value = "1">debt_consolidation</option>
+                              <option value = "2">educational</option>
+                              <option value = "3">home_improvement</option>
+                              <option value = "4">major_purchase</option>
+                              <option value = "5">small_business</option>
+                              <option value = "6">all_other</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="age">Interest rate</label>
+                            <input type="text" class="form-control" id="int.rate" name="int.rate" required>
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="age">Monthly installment</label>
+                            <input type="text" class="form-control" id="installment" name="installment" required>
+                        </div>
+                      </div>
+                      <br>
+                      <div class="form-group  row">
+                          <div class="col-sm-3">
+                            <label for="age">Annual income</label>
+                            <input type="text" class="form-control" id="log.annual.inc" name="log.annual.inc" required>
+                          </div>
+                          <div class="col-sm">
+                            <label for="trestbps">Debt to income ratio</label>
+                            <input type="text" class="form-control" id="dti" name="dti"  required>
+                          </div>
+                          <div class="col-sm">
+                            <label for="chol">FICO</label>
+                            <input type="text" class="form-control" id="fico" name="fico" required>
+                          </div>
+                          <div class="col-sm">
+                            <label for="chol">Days with credit line</label>
+                            <input type="text" class="form-control" id="days.with.cr.line" name="days.with.cr.line" required>
+                          </div>
+                      </div>
+                      <br>
+                      <div class="form-group row">
+                          <div class="col-sm">
+                            <label for="chol">Revolving balance</label>
+                            <input type="text" class="form-control" id="revol.bal" name="revol.bal" required>
+                          </div>
+                          <div class="col-sm">
+                            <label for="chol">Revolving line utilization rate</label>
+                            <input type="text" class="form-control" id="revol.util" name="revol.util" required>
+                          </div>
+                          <div class="col-sm">
+                            <label for="chol">Number of inquiries</label>
+                            <input type="number" class="form-control" id="inq.last.6mths" name="inq.last.6mths" required>
+                          </div>
+                          <div class="col-sm">
+                            <label for="chol">Number of delays</label>
+                            <input type="number" class="form-control" id="delinq.2yrs" name="delinq.2yrs" required>
+                          </div>
+                          <div class="col-sm">
+                            <label for="chol">Number of derogatory records</label>
+                            <input type="number" class="form-control" id="pub.rec" name="pub.rec" required>
+                          </div>
+                      </div>
+                      <br>
+                      <div class="form-group">
+                        <input class="search_bt" type="submit" value="Result">
+                      </div>
+                     <div class="result">
+							<strong style="color:blue">{{result}}</strong>
+					  </div>
+                </div>
+            </form>
+    </div>
+    <div class="copyright">
+    	<p class="copyright_text">© 2021 LendingClub Company. All Rights Reserved</p>
+    </div>
+</body>
+</html>
