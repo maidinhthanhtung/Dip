@@ -6,7 +6,7 @@ from sklearn.preprocessing import RobustScaler
 from flask import Flask, request, render_template
 
 #Xu ly du lieu de lay ham chuan hoa
-df = pd.read_csv("C:/Users/admin/PycharmProjects/Diplom/loans.csv")
+df = pd.read_csv("loans.csv")
 df = pd.get_dummies(df, columns=["purpose"], drop_first=True)
 X = df.loc[:, df.columns != "not.fully.paid"].values
 y = df.loc[:, df.columns == "not.fully.paid"].values.flatten()
